@@ -20,7 +20,7 @@ public class ListaTarefas {
 
     public boolean verificarNome(String nome, Tarefa t) {
         for (Tarefa tarefa : lista_tarefas) {
-            if (tarefa.equals(nome)) {
+            if (tarefa.getNome().toUpperCase().equals(nome.toUpperCase())) {
                 t = tarefa;
                 return false;
             }
@@ -44,14 +44,6 @@ public class ListaTarefas {
             System.out.println("Já existe uma tarefa com esse nome!");
         }
     }
-    public void listarTarefasVisualizar() {
-        if(lista_tarefas.size() != 0){
-            for (Tarefa tarefa : lista_tarefas) {
-                System.out.println("- " + tarefa.getNome());
-            }
-        } else System.out.println("Ainda não há nenhuma tarefa adicionada.");
-
-    }
 
     public void listarTarefas() {
         if(lista_tarefas.size() != 0){
@@ -65,7 +57,7 @@ public class ListaTarefas {
 
     public void atualizarTarefa(Scanner sc) {
         System.out.println("=====//=====");
-        listarTarefasVisualizar();
+        listarTarefas();
         System.out.print("Digite o nome da tarefa que deseja atualizar: ");
         Tarefa tarefa = new Tarefa(sc.nextLine(), false);
         if (buscarNome(tarefa)) {
@@ -89,7 +81,7 @@ public class ListaTarefas {
                 System.out.println();
                 switch (opc) {
                     case 1:
-                        System.out.println("Informe o novo nome da tarefa: ");
+                        System.out.print("Informe o novo nome da tarefa: ");
                         String nome = sc.nextLine();
                         t.setNome(nome);
                         System.out.println("\nNome da tarefa atualizado!");
