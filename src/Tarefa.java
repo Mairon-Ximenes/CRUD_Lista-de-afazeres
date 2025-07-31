@@ -22,4 +22,9 @@ public class Tarefa {
         this.nome = nome;
         this.concluida = concluida;
     }
+
+    public String toString() {
+        return (concluida ? "[X] " : "[ ] ") + nome;
+    }
+
 }

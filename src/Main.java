@@ -17,6 +17,7 @@ public class Main {
                 System.out.println("2 - Listar tarefas");
                 System.out.println("3 - Atualizar tarefa");
                 System.out.println("4 - Remover tarefa");
+                System.out.println("5 - Sair");
                 System.out.print("Informe o que deseja fazer: ");
                 opc = sc.nextInt();
                 sc.nextLine();
